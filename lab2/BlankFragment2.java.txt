@@ -1,0 +1,293 @@
+package com.example.myapplication;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
+import android.widget.EditText;
+import android.widget.Button;
+
+
+public class BlankFragment2 extends Fragment {
+
+    private static final String ARG_PARAMETR1 = "p1";
+    private static final String ARG_PARAMETR2 = "p2";
+
+    private String mParam1;
+    private String mParam2;
+    private Button button_1,button_2,button_3,button_4,button_5,button_6,button_7,button_8,button_9,button_0,
+            button_plus,button_minus,button_multiply,button_division,button_equal,button_coma,button_clear;
+    private EditText e1;
+    private float Value1, Value2;
+    private boolean mAddition, mSubtract, mMultiplication, mDivision;
+    private Button button_operation1, button_operation2;
+    private boolean op;
+
+    public BlankFragment2() {
+    }
+
+
+    public static BlankFragment2 newInstance(String param1, String param2) {
+        BlankFragment2 fragment = new BlankFragment2();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAMETR1, param1);
+        args.putString(ARG_PARAMETR2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_blank2, container, false);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAMETR1);
+            mParam2 = getArguments().getString(ARG_PARAMETR2);
+        }
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        button_0 = view.findViewById(R.id.button_0);
+        button_1 = view.findViewById(R.id.button_1);
+        button_2 = view.findViewById(R.id.button_2);
+        button_3 = view.findViewById(R.id.button_3);
+        button_4 = view.findViewById(R.id.button_4);
+        button_5 = view.findViewById(R.id.button_5);
+        button_6 = view.findViewById(R.id.button_6);
+        button_7 = view.findViewById(R.id.button_7);
+        button_8 = view.findViewById(R.id.button_8);
+        button_9 = view.findViewById(R.id.button_9);
+        button_plus = view.findViewById(R.id.button_plus);
+        button_minus = view.findViewById(R.id.button_minus);
+        button_multiply = view.findViewById(R.id.button_multiply);
+        button_division = view.findViewById(R.id.button_division);
+        button_equal = view.findViewById(R.id.button_equal);
+        button_coma = view.findViewById(R.id.button_coma);
+        button_clear = view.findViewById(R.id.button_clear);
+        button_operation1 = view.findViewById(R.id.button_operation1);
+        button_operation2 = view.findViewById(R.id.button_operation2);
+        e1 = view.findViewById(R.id.editText);
+
+
+        button_0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(null);
+                e1.setText(e1.getText() + "0");
+                Log.i("mylog", "click0in2");
+            }
+        } );
+
+        button_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "1");
+                Log.i("mylog", "click1in2");
+            }
+        } );
+
+
+        button_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "2");
+                Log.i("mylog", "click2in2");
+            }
+        } );
+
+        button_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "3");
+                Log.i("mylog", "click3in2");
+            }
+        } );
+
+        button_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "4");
+                Log.i("mylog", "click4in2");
+            }
+        } );
+
+        button_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "5");
+                Log.i("mylog", "click5in2");
+            }
+        } );
+
+        button_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "6");
+                Log.i("mylog", "click6in2");
+            }
+        } );
+
+        button_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "7");
+                Log.i("mylog", "click7in2");
+            }
+        } );
+
+        button_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "8");
+                Log.i("mylog", "click8in2");
+            }
+        } );
+        button_9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + "9");
+                Log.i("mylog", "click9in2");
+            }
+        } );
+
+        button_coma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                e1.setText(e1.getText() + ".");
+                Log.i("mylog", "clickpointin2");
+            }
+        } );
+
+        button_clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickClearin2");
+                e1.setText("");
+            }
+        } );
+
+        button_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickminusin2");
+                Value1 = Float.parseFloat(e1.getText() + "");
+                mSubtract = true ;
+                e1.setText(null);
+            }
+        } );
+        button_multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickmultin2");
+                Value1 = Float.parseFloat(e1.getText() + "");
+                mMultiplication = true ;
+                e1.setText(null);
+            }
+        } );
+        button_plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickplusin2");
+
+                if (e1 == null){
+                    e1.setText("");
+                }else {
+                    Value1 = Float.parseFloat(e1.getText() + "");
+                    mAddition = true;
+                    e1.setText(null);
+                }
+            }
+        } );
+        button_operation1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickoperation");
+                Value1 = Float.parseFloat(e1.getText() + "");
+                op = true ;
+                e1.setText(Value1 * Value1 + "");
+
+            }
+        } );
+        button_operation2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickoperation");
+                Value1 = Float.parseFloat(e1.getText() + "");
+                op = true ;
+                e1.setText(1 / Value1 + "");
+
+            }
+        } );
+
+        button_equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("mylog", "clickeqlin2");
+                Value2 = Float.parseFloat(e1.getText() + "");
+
+                if (mAddition == true){
+
+                    e1.setText(Value1 + Value2 + "");
+                    mAddition=false;
+                }
+
+
+                if (mSubtract == true){
+                    e1.setText(Value1 - Value2 + "");
+                    mSubtract=false;
+                }
+
+                if (mMultiplication == true){
+                    e1.setText(Value1 * Value2 + "");
+                    mMultiplication=false;
+                }
+
+                if (mDivision == true){
+                    e1.setText(Value1 / Value2 + "");
+                    mDivision=false;
+                }
+                if (op == true){
+                    e1.setText(Value1 * Value1 + "");
+                    op = false;
+                }
+                if (op == true){
+                    e1.setText(1 / Value1 + "");
+                    op = false;
+                }
+            }
+        } );
+    }
+}
